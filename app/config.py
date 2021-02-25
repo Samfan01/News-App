@@ -14,7 +14,7 @@ class ProdConfig(Config):
         configuration settings
         
     '''
-    pass
+    SOURCE_BASE_API_URL = 'https://newsapi.org/v2/sources?apiKey={}'
 
 class DevConfig(Config):
     '''
