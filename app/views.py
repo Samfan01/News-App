@@ -16,4 +16,4 @@ def news(news_url):
     '''
     View news page function that returns news details
     '''
-    return render_template('news.html'url=news_url)
+    return render_template('news.html',url=news_url)
