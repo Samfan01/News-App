@@ -66,7 +66,18 @@ def get_articles(id):
         source_articles_data = url.read()
         source_articles_response = json.loads(source_articles_data)
         
-        source_object = None
+        article_object = None
         if source_articles_response:
+            author = source_articles_response.get('author')
+            title = source_articles_response.get('title')
+            publishedAt = source_articles_response.get('publishedAt')
+            description = source_articles_response.get('description')
+            url = source_articles_response.get('url')
+            urlToImage = source_articles_response.get('urlToImage')
             
-        
+            article_object = Article(author,title,publishedAt,description,url,urlToImage)
+            
+    
+            
+            
+    return article_object
