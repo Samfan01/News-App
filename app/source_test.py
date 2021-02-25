@@ -2,7 +2,7 @@ import unittest
 from models import source
 Source = source.Source
 
-class NewsTest(unittest.TestCase):
+class SourceTest(unittest.TestCase):
     '''
     Test Class to test the behaviour of the Source class
     '''

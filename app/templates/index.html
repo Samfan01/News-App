@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        {% if title %}
-        <title>{{ title }}</title>
-        {% else %}
-        <title>Welcome to the Website that keeps you updated on whats happening in the world.</title>
-        {% endif %}
-    </head>
-    <body>
-        
-    </body>
-</html>
+{% extends 'base.html'%}
+{% import 'macros.html' as macro %}
+{% block content %}
+    <!-- NEWS SOURCES SECTION-->
+    <h2>News Sources</h2>
+    <ul>
+        {% for news_source in news %}
+        {{ macro.displaySourceList(news) }}
+        {% endfor %}
+    </ul>
+
+{% endblock%}

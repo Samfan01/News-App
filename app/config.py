@@ -2,7 +2,7 @@ class Config:
     '''
     General configuration parent class
     '''
-    pass
+    SOURCE_API_BASE_URL = 'https://newsapi.org/v2/sources?apiKey={}'
 
 
 class ProdConfig(Config):
@@ -14,7 +14,7 @@ class ProdConfig(Config):
         configuration settings
         
     '''
-    SOURCE_BASE_API_URL = 'https://newsapi.org/v2/sources?apiKey={}'
+    pass
 
 class DevConfig(Config):
     '''
