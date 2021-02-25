@@ -1,8 +1,8 @@
 from app import app
 import urllib.request,json
-from .models import source
+from models import Source
 
-Source = source.Source
+#Source = source.Source
 
 #Getting api key
 api_key = app.config['SOURCE_API_KEY']
