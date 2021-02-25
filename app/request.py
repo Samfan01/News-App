@@ -10,6 +10,10 @@ api_key = app.config['SOURCE_API_KEY']
 #Getting the source base url
 base_url = app.config['SOURCE_API_BASE_URL']
 
+#Getting the articles base url
+
+articles_base_url = app.config['ARTICLES_API_BASE_URL']
+
 
 def get_sources():
     '''
@@ -54,3 +58,15 @@ def process_results(source_list):
         
     return source_results
 
+def get_articles(id):
+    get_source_articles_url = articles_base_url.format(id,api_key)
+    
+    with urllib.request.urlopen(get_source_articles_url) as url:
+        
+        source_articles_data = url.read()
+        source_articles_response = json.loads(source_articles_data)
+        
+        source_object = None
+        if source_articles_response:
+            
+        
