@@ -8,12 +8,14 @@ def index():
     View root page function that returns the index
     page and its data
     '''
-    
-    return render_template('index.html')
+    title = 'Home - Welcome to the Website that keeps you updated on whats happening in the world.'
+    return render_template('index.html',title = title)
 
 @app.route('/news/<news_url>')
 def news(news_url):
     '''
     View news page function that returns news details
     '''
-    return render_template('news.html',url=news_url)
+    title = 'News- View related articles'
+    
+    return render_template('news.html',url=news_url,title = title)

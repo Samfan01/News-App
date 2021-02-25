@@ -1,1 +1,14 @@
-<h1>Hello World {{ url }}</h1>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        {% if title %}
+        <title>{{ title }}</title>
+        {% else %}
+        <title>Welcome to the Website that keeps you updated on whats happening in the world.</title>
+        {% endif %}
+    </head>
+    <body>
+        <h1>Hello World {{ url }}</h1>
+    </body>
+</html>
