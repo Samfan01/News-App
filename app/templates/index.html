@@ -13,6 +13,7 @@
 {% block content %}
 <!-- NEWS SOURCES SECTION-->
 <h2>News Sources</h2>
+<br><br>
 
 {% for news_source in news %}
         
@@ -22,13 +23,12 @@
                     <h3 class="card-title">{{news_source.name}}</h3>
                     <h6 class="card-subtitle mb-2 text-muted">{{news_source.id}}</h6>
                     <p class="card-text">{{news_source.description}}</p>
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
+                    <a href="/article/{{news_source.id}}" class="card-link">See Articles</a>
                 </div>
             </div>
 
         </div>
-        <br><br>
+        
     
     
 {% endfor %}

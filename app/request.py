@@ -1,8 +1,9 @@
 from app import app
 import urllib.request,json
 from models import Source
+from models import Article
 
-#Source = source.Source
+
 
 #Getting api key
 api_key = app.config['SOURCE_API_KEY']
@@ -67,17 +68,36 @@ def get_articles(id):
         source_articles_response = json.loads(source_articles_data)
         
         article_object = None
-        if source_articles_response:
-            author = source_articles_response.get('author')
-            title = source_articles_response.get('title')
-            publishedAt = source_articles_response.get('publishedAt')
-            description = source_articles_response.get('description')
-            url = source_articles_response.get('url')
-            urlToImage = source_articles_response.get('urlToImage')
-            
-            article_object = Article(author,title,publishedAt,description,url,urlToImage)
-            
     
+        if source_articles_response['articles']:
+            source_articles_list = source_articles_response['articles']
+            article_object = process_articles(source_articles_list)
+            
+        
             
             
     return article_object
+
+def process_articles(article_list):
+    '''
+    Function to take in the source object list and return the article object
+    '''
+    article_object = []
+
+
+
+    for article_item in article_list:
+            author = article_item.get('author')
+            title = article_item.get('title')
+            publishedAt = article_item.get('publishedAt')
+            description = article_item.get('description')
+            url = article_item.get('url')
+            urlToImage = article_item.get('urlToImage')
+            
+            if description:   
+                article_result = Article(author,title,publishedAt,description,url,urlToImage)
+                article_object.append(article_result)
+    
+    return article_object
+                
+            
