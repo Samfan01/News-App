@@ -3,10 +3,11 @@ class Source:
     Source class to define the source objects
     '''
     
-    def __init__(self,id,name,description):
+    def __init__(self,id,name,description,category):
         self.id = id
         self.name = name 
         self.description = description
+        self.category = category
 class Article:
     '''
     Article class to define the article objects

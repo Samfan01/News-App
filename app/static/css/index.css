@@ -1,5 +1,11 @@
-h2{
+h1{
     text-align: center;
-    color:red;
-    font-size: larger;
+    color: blue;
+    font-weight: bolder;
+}
+h2{
+    font-weight: bolder;
+}
+.page{
+  background-color: cadetblue;
 }

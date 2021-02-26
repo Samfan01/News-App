@@ -12,21 +12,23 @@
 
 {% block content %}
 <!-- NEWS SOURCES SECTION-->
-<h2>News Sources</h2>
+<h1>News Sources</h1>
 <br><br>
 
 {% for news_source in news %}
-        
+        <div class="page">
         <div class="col-md-3">
-            <div class="card" >
+            <div class="card">
+                <h2 class="card-header">{{news_source.name}}</h2>
+                <hr>
                 <div class="card-body">
-                    <h3 class="card-title">{{news_source.name}}</h3>
-                    <h6 class="card-subtitle mb-2 text-muted">{{news_source.id}}</h6>
+                    <h4 class="card-title">{{news_source.id}}</h4>
                     <p class="card-text">{{news_source.description}}</p>
-                    <a href="/article/{{news_source.id}}" class="card-link">See Articles</a>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
-
+            <hr>
+        </div>
         </div>
         
     
