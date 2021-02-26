@@ -25,4 +25,4 @@ def article(id):
      
    
     
-     return render_template('article.html',title = title,article = article)
+     return render_template('article.html',article = article)
