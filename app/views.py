@@ -10,11 +10,11 @@ def index():
     page and its data
     '''
     #Getting sources
-    business_news = get_sources('business')
-    print(business_news)
+    news_sources = get_sources()
+    print(news_sources)
     
     title = 'Home - Welcome to the Website that keeps you updated on whats happening in the world.'
-    return render_template('index.html',title = title,business = business_news)
+    return render_template('index.html',title = title,news = news_sources)
 
 @app.route('/article/<id>')
 def article(id):
@@ -25,4 +25,4 @@ def article(id):
      
    
     
-     return render_template('article.html',article = article)
+     return render_template('article.html',title = title,article = article)

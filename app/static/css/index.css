@@ -4,8 +4,11 @@ h1{
     font-weight: bolder;
 }
 h2{
-    font-weight: bolder;
+    font-weight: 900;
 }
-.page{
+body{
   background-color: cadetblue;
+}
+.card-body{
+    height: 150px;
 }

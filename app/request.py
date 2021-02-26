@@ -16,12 +16,12 @@ base_url = app.config['SOURCE_API_BASE_URL']
 articles_base_url = app.config['ARTICLES_API_BASE_URL']
 
 
-def get_sources(category):
+def get_sources():
     '''
     Function that gets the json response to our url
     request.
     '''
-    get_sources_url = base_url.format(category,api_key)
+    get_sources_url = base_url.format(api_key)
     
     with urllib.request.urlopen(get_sources_url) as url:
         get_sources_data = url.read()
@@ -55,7 +55,7 @@ def process_results(source_list):
         category = source_item.get('category')
         
         if id:
-            source_object = Source(id,name,description)
+            source_object = Source(id,name,description,category)
             source_results.append(source_object)
         
     return source_results
