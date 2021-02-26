@@ -9,13 +9,19 @@
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 {% endblock %}
 
+<!-- navbar block -->
+{% block navbar %}
+    {% include 'navbar.html' %}
+{% endblock%}
 
 <!-- Content block-->
 {% block content %}
+<h1>Articles for {{article.name}}</h1>
+
 {% for article in article %}
 
 
-<br>
+
 <div class="col-md-3">
     <div class="card">
         <h3 class="card-title">{{article.title}}</h3>
@@ -31,7 +37,9 @@
             <hr>
         </div>
     </div>
+    <br>
 </div>
+
 
 
 
