@@ -1,19 +1,21 @@
-from app import app
-import urllib.request,json
 from models import Source
 from models import Article
+import requests,json
+
+#Getting the Api key
+api_key = None
+
+#Getting the base urls
+base_url = None
+baseA_url =None
+
+def configure_request(app):
+    global api_key,base_url,baseA_url
+    api_key = app.config['SOURCE_API_KEY']
+    base_url = app.config['SOURCE_API_BASE_URL']
+    baseA_url = app.config['ARTICLES_API_BASE_URL']
 
 
-
-#Getting api key
-api_key = app.config['SOURCE_API_KEY']
-
-#Getting the source base url
-base_url = app.config['SOURCE_API_BASE_URL']
-
-#Getting the articles base url
-
-articles_base_url = app.config['ARTICLES_API_BASE_URL']
 
 
 def get_sources():
@@ -23,15 +25,14 @@ def get_sources():
     '''
     get_sources_url = base_url.format(api_key)
     
-    with urllib.request.urlopen(get_sources_url) as url:
-        get_sources_data = url.read()
-        get_sources_response = json.loads(get_sources_data)
+       
+    get_sources_response = requests.get(get_sources_url).json()
         
-        source_results = None
-        
-        if get_sources_response['sources']:
-            source_results_list = get_sources_response['sources']
-            source_results = process_results(source_results_list)
+    source_results = None
+    
+    if get_sources_response['sources']:
+        source_results_list = get_sources_response['sources']
+        source_results = process_results(source_results_list)
             
     return source_results
 
@@ -61,18 +62,16 @@ def process_results(source_list):
     return source_results
 
 def get_articles(id):
-    get_source_articles_url = articles_base_url.format(id,api_key)
+    source_articles_url = baseA_url.format(id,api_key)
     
-    with urllib.request.urlopen(get_source_articles_url) as url:
-        
-        source_articles_data = url.read()
-        source_articles_response = json.loads(source_articles_data)
-        
-        article_object = None
+   
+    source_articles_response = requests.get(source_articles_url).json()
     
-        if source_articles_response['articles']:
-            source_articles_list = source_articles_response['articles']
-            article_object = process_articles(source_articles_list)
+    article_object = None
+
+    if source_articles_response['articles']:
+        source_articles_list = source_articles_response['articles']
+        article_object = process_articles(source_articles_list)
             
         
             

@@ -8,6 +8,7 @@ class Source:
         self.name = name 
         self.description = description
         self.category = category
+        
 class Article:
     '''
     Article class to define the article objects
