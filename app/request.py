@@ -94,7 +94,7 @@ def process_articles(article_list):
             description = article_item.get('description')
             url = article_item.get('url')
             urlToImage = article_item.get('urlToImage')
-            name = article_item.get('name')
+            name = article_item.get('source:name')
             
             if description:   
                 article_result = Article(author,title,publishedAt,description,url,urlToImage,name)

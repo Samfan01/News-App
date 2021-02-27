@@ -4,11 +4,19 @@ h1{
     font-weight: bolder;
 }
 h2{
-    font-weight: 900;
+    font-weight: 500;
 }
 body{
   background-color: cadetblue;
 }
 .card-body{
-    height: 150px;
+    height: 190px;
+}
+p{
+    font-size: large;
+    font-weight: 500;
+    font-family: 'Ubuntu', sans-serif;
+}
+h4{
+    color:darkblue;
 }
