@@ -19,14 +19,17 @@
 <h1>News Sources</h1>
 <br><br>
 
-{% for news_source in news %}
+<div class="container">
+    {% for news_source in news %}
         <div class="page">
         <div class="col-md-4">
             <div class="card">
                 <h2 class="card-header">{{news_source.name}}</h2>
                 <hr>
                 <div class="card-body">
-                    <h4 class="card-title">'{{news_source.id}}'</h4>
+                    <h3 class="card-title">'{{news_source.id}}'</h3>
+                    <h4>Source Category: {{news_source.category}}</h4>
+                    <hr>
                     <p class="card-text">{{news_source.description}}</p>
                     <p><a href="/article/{{news_source.id}}" class="btn btn-primary">See articles</a></p>
                 </div>
@@ -39,5 +42,8 @@
     
 {% endfor %}
 
+
+
+</div>
 
 {% endblock%}

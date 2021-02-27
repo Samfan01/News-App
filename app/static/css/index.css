@@ -10,13 +10,13 @@ body{
   background-color: cadetblue;
 }
 .card-body{
-    height: 190px;
+    height: 275px;
 }
 p{
     font-size: large;
     font-weight: 500;
     font-family: 'Ubuntu', sans-serif;
 }
-h4{
+h3{
     color:darkblue;
 }
