@@ -26,7 +26,7 @@ As a user of the website you will be able to:
 ## Behaviour Driven Development (BDD)
 |Behaviour 	           |    Input 	                 |       Output          |
 |----------------------------------------------|:-----------------------------------:|-----------------------------:|       
-|Page loads	                           |   USer clicks any preffered news source.                            |        is displayed  |                        |
+|Page loads	                           |   USer clicks any preffered news source.                            |        is displayed are seen  |                        |
 
 
 ### Installing
